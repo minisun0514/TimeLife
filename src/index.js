@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import App from './Pages/index.jsx';
 
 ReactDom.render(
     <Router>
