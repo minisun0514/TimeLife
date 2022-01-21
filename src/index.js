@@ -1,11 +1,8 @@
 import React from "react";
-import ReactDom from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import ReactDOM from "react-dom";
 import App from './Pages/index.jsx';
 
-ReactDom.render(
-    <Router>
-        <App />
-    </Router>,
+ReactDOM.render(
+    <App />,
     document.getElementById('root')
 )

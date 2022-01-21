@@ -20,4 +20,9 @@ module.exports = {
         new HtmlWebpackPlugin({template: './src/index.html'})
     ],
     mode: 'production',
+    devServer: {
+        static:{
+            directory: path.join(__dirname,'dist')
+        }
+    }
 }
