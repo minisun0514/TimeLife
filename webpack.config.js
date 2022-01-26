@@ -2,10 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    mode: 'development',
+    devtool: 'inline-source-map',
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'lifetime.bundle.js',
+        clean: true,
     },
     module: {
         rules: [
@@ -17,16 +20,22 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'], 
+            },
+            {
+                test: /\.ts/i,
+                use: 'ts-loader',
             }
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({template: './src/index.html'})
+        new HtmlWebpackPlugin({ template: './src/index.html' })
     ],
     mode: 'production',
     devServer: {
-        static:{
-            directory: path.join(__dirname,'dist')
-        }
+        static: './dist',
+        hot: true
+    },
+    resolve: {
+        extensions:['.js', '.jsx']
     }
 }
