@@ -30,7 +30,6 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: './src/index.html' })
     ],
-    mode: 'production',
     devServer: {
         static: './dist',
         hot: true
