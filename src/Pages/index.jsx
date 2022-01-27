@@ -49,7 +49,7 @@ class Users extends PureComponent {
     }
 }
 
-export default class HelloRouter extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <Router>
