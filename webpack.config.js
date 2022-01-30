@@ -32,7 +32,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: './src/index.html' })
+        new HtmlWebpackPlugin({ 
+            template: './src/index.html',
+            favicon: path.resolve('./src/favicon.ico') 
+        })
     ],
     devServer: {
         static: './dist',
