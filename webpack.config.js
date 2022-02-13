@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
     entry: {
-        index: './src/index.js',
+        index: './src/index.tsx',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -26,7 +26,7 @@ module.exports = {
             {
                 test: /\.tsx?$/i,
                 exclude: /node_modules/,
-                use: 'ts-loader',
+                use: ['babel-loader','ts-loader']
             }
         ]
     },
@@ -41,7 +41,7 @@ module.exports = {
         hot: true
     },
     resolve: {
-        extensions:['.js', '.jsx']
+        extensions:['.js', '.jsx','.tsx']
     },
     optimization: {
         splitChunks: {
